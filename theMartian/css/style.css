@@ -1,0 +1,151 @@
+body{
+	font: 100%/1.5em Arial, Helvetica, sens-serif;
+	background-image: url(../images/bg.png);
+	background-color: #c7b39b;
+	background-repeat:no-repeat;
+	width:800px;
+	height:1280px;
+}
+
+	/*Раскрывающееся меню*/
+.menu ul {
+    margin: 0;
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+	font-family: fantasy;
+	}
+
+.menu .title {
+    font-size: 18px;
+    cursor: pointer;
+    }
+
+.menu .title::before {
+    content: '▶ ';
+    font-size: 80%;
+    color: #C14C7A;
+    }
+
+.menu.open .title::before {
+    content: '▼ ';
+    }
+
+.menu.open ul {
+    display: block;
+    }
+
+	/*Карусель*/		
+	
+.carousel {
+	position: absolute;
+	right: 10px;
+	top: 30px;
+	width: 870px;
+	padding: 10px 40px;
+	border: 1px solid #FE862E;
+	border-radius: 150px;
+	}
+	
+.carousel img {
+	width: 290px;
+	height: 280px;
+	display: block;
+	}
+
+.arrow {
+	position: absolute;
+	top: 145px;
+	padding: 0;
+	background: #ddd;
+	border-radius: 15px;
+	border: 1px solid gray;
+	font-size: 24px;
+	line-height: 24px;
+	color: #444444;
+	display: block;
+	}
+
+.arrow:focus {
+	outline: none;
+	}
+
+.arrow:hover {
+	background: #ccc;
+	cursor: pointer;
+	}
+
+.prev {
+	left: 7px;
+	}
+
+.next {
+	right: 7px;
+	}
+
+.gallery {
+	width: 870px;
+	overflow: hidden;
+	}
+
+.gallery ul {
+	height: 280px;
+	width: 9999px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	transition: margin-left 250ms;
+	font-size: 0;
+	}
+
+.gallery li {
+	display: inline-block;
+	}
+	
+/*Спрятать сообщение*/
+
+h3 {
+	margin: 0;
+	padding-bottom: .3em;
+	padding-right: 20px;
+	font-size: 1.1em;
+	}
+
+p {
+	margin: 0;
+	padding: 0 0 .5em;
+	}
+
+.pane {
+	background: #edf5e1;
+	padding: 10px 20px 10px;
+	border: solid 2px #c4df9b;
+	position: relative;
+	}
+
+.remove-button {
+	position: absolute;
+	font-size: 110%;
+	top: 0;
+	color: darkred;
+	right: 10px;
+	display: block;
+	width: 24px;
+	height: 24px;
+	border: none;
+	background: transparent;
+	}
+.massages{
+	position: absolute;
+	top: 360px;
+	right: 20px;
+	width: 700px;
+	}	
+
+.buttons a {
+	display: block;
+	width: 38px;
+	height: 37px;
+	background: url(../images/button.png);
+	}
+	

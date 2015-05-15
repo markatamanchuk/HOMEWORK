@@ -1,0 +1,37 @@
+body{
+	color: #777777;
+	font-family: "Open Sans" "Times New Roman";
+	font-size: 14px;
+}
+
+a{
+	color: e1524b;
+	text-decoration:underline;
+}
+
+.container{
+width: 1170px;
+margin: 0 auto;
+
+}
+
+#header{
+	background-color: #76c7c0;
+	padding: 24px 0;
+	background-image: url("../images/header_bg.png");
+	background-repeat:  repeat-x;
+	background-position: left bottom;
+	color: white;
+}
+
+#footer{
+	background-color: #76c7c0;
+	padding: 50px 0;
+	color: white;
+}
+
+#footerCopy{
+padding: 20px 0;
+color: white;
+background-color: #6ab3ac;
+}
