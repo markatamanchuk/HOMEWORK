@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	
+    <link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+   <form>
+		
+			<input type="text" name="firstName"><Br>
+			<input type="text" name="phone"><Br>
+			<button type="submit">Отправить</button>
+		
+	</form>
+	
+	<ul class="contactList"></ul>
+</div>	
+	<script>
+		$(document).ready(function(){
+			var $form = $('form');
+			var $contactList = $('.contactList');
+			var storageContacts = JSON.parse(localStorage.getItem('contact'))
+			
+			if (!storageContacts){
+				storageContacts = [];
+			}
+			else{
+				storageContacts.forEach(function(contact){
+					$contactList.append("<li> "+ contact.firstName + " - " + contact.phone + "</li>")
+				})
+			}
+			
+			$form.on('submit',function(event){
+				
+				event.preventDefault();
+				var $firstName = $form.find('input[name="firstName"]');
+				var $phone     = $form.find('input[name="phone"]');
+				
+				var data = {
+					firstName: $firstName.val(),
+					phone:$phone.val()
+				};
+				
+				$firstName.val('')
+				$phone.val('')
+				
+				storageContacts.push(data);
+				
+				localStorage.setItem('contact',JSON.stringify(storageContacts));
+				
+				$contactList.append("<li> " + data.firstName + " - " + data.phone + "</li>")
+				
+				return false;
+				
+				
+			})
+		})
+	</script>
+</body>
+
+
+
+
+
+</html>

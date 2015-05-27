@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+
+
+	<link rel="stylesheet" href="css/bootstrap.css">
+	
+</head>
+<body>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<!— Brand and toggle get grouped for better mobile display —>
+		<div class="navbar-header ajax-links">
+			<a class="navbar-brand" href="/home">AJAX</a>
+		</div>
+
+		<!— Collect the nav links, forms, and other content for toggling —>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav ajax-links">
+				<li class="active">
+					<a href="/home">Home</a>
+				</li>
+				<li>
+					<a href="/about">Alout</a>
+				</li>
+				<li>
+					<a href="/contacts">Contacts</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12" id="content">
+
+		</div>
+	</div>
+</div>
+
+	<!--<button id="getAllUsersBtn">Get User</button>
+	<ul class="usersList"></ul>-->
+
+	<script>
+		$(document).ready(function(){
+			var $getUsersBtn = $('#getAllUsersBtn')
+			var $ajaxLinks = $('.ajax-links a');
+			var $content = $('#content');
+
+			$ajaxLinks.on('click',function(event){
+				event.preventDefault();
+				var href = $(event.target).attr('href').replace('/','');
+
+				$.ajax({
+					method:"GET",
+					url:'pages/'+href +'.html',
+					dataType:'html',
+					success: function (data) {
+						$content.html(data);
+						$ajaxLinks.parent().removeClass('active');
+						$(event.target).parent().addClass('active');
+					}
+				})
+
+			});
+
+			$('.ajax-links.active a').trigger('click');
+
+			$getUsersBtn.on('click', function(){
+				$getUsersBtn.text('Loading...');
+
+					setTimeout(function(){
+						$.ajax({
+							url: 'api/users.json',
+							method: 'GET',
+							success: function(data){
+								var $usersList = $('.usersList');
+
+
+
+								$usersList.html('');
+
+								for (var i in data){
+									$usersList.append(
+										'<li>' +
+											data[i].id + ": " +
+											data[i].firstName + " "	+
+											data[i].lastName +
+											' (' + data[i].username + ')' +
+										'</li>'
+								);
+							}
+						},
+						error: function(){
+							alert('Something went wrong :(');
+							console.log(arguments);
+						},
+						complete: function(){
+							$getUsersBtn.text('Get Users');
+						}
+ 					});
+				},1000);
+				});
+			});
+	</script>
+
+</body>
+	
+</html>

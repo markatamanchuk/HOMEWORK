@@ -1,49 +1,6 @@
-.buttons a {
-	display: block;
-	width: 38px;
-	height: 37px;
-	background: url(../images/button_both.png);
-	
-}
-
 li{
+	background-image: url("../images/button_v2.png");
+	background-repeat: no-repeat;
 	display: block;
-	width: 38px;
-	height: 37px;
-}
 
-.profil a:hover{
-	background-position: -38px 0;
-}
-
-.messages a{
-	background-position: 0 -37px;
-}
-
-.messages a:hover{
-	background-position: -38px -37px;
-}
-
-.contacts a{
-	background-position: 0 -74px;
-}
-
-.contacts a:hover{
-	background-position: -38px -74px;
-}
-
-.portfolio a{
-	background-position: 0 -111px;
-}
-
-.portfolio a:hover{
-	background-position: -38px -111px;
-}
-
-.css-live a{
-	background-position: 0 -148px;
-}
-
-.css-live a:hover{
-	background-position: -38px -148px;
 }
