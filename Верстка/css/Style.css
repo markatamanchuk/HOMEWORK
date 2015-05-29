@@ -61,8 +61,37 @@ a{
 }
 
 #underheader{
-	height: 500px;
+	height: 176px;
 	background-color: #7f8c8c;
+	padding-top: 157px;
+	padding-bottom: 167px;
+}
+
+#vestibulum{
+	font-family: "Open Sans" "Times New Roman";
+	font-size: 50px;
+	background-color: #e2534b;
+	color: white;
+	width: 346px;
+	text-align: center;
+	border: 1px solid #e2534b;
+	border-radius: 7px;
+	margin: 0 auto;
+	margin-bottom: 10px;
+
+}
+
+#undervest{
+	font-family: "Open Sans" "Times New Roman";
+	font-size: 16px;
+	background-color: #3f4646;
+	color: white;
+	width: 430px;
+	text-align: center;
+	border: 1px solid #3f4646;
+	border-radius: 7px;
+	margin: 0 auto;
+	padding: 15px 20px;
 }
 
 #footer{
